@@ -9,6 +9,9 @@ import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config";
 
 import "./globals.css";
+import Todo from "@/components/todo/Todo";
+import Todos from "@/components/todo/Todos";
+import { getData } from "@/actions/todoAction";
 
 const font = Nunito({ subsets: ["latin"] });
 
@@ -18,11 +21,12 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = siteConfig;
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const data = await getData();
   return (
     <ClerkProvider
       appearance={{
@@ -37,12 +41,16 @@ export default function RootLayout({
       <html lang="en">
         <body className={font.className}>
           <Toaster theme="light" richColors closeButton />
-          <ExitModal />
+          {/* <ExitModal />
           <HeartsModal />
-          <PracticeModal />
+          <PracticeModal /> */}
+          {/* changes by shiv */}
+          <Todos todos={data}  />
           {children}
         </body>
       </html>
     </ClerkProvider>
   );
 }
+
+// in this page change by shiv

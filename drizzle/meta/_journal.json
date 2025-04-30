@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1746013149130,
+      "tag": "0000_clammy_midnight",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1746013860189,
+      "tag": "0001_green_wither",
+      "breakpoints": true
+    }
+  ]
+}
